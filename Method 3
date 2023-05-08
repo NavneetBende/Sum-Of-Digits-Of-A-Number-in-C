@@ -1,0 +1,23 @@
+// Time complexity : O(N)
+// Space complexity : O(1)
+// Auxiliary Space Complexity : O(N)
+// Due to function call stack
+#include<stdio.h>
+ 
+int getSum(int num)
+{
+    if(num == 0){
+        return 0 ;
+    }
+    
+    int digit = num % 10;
+    
+    return digit + getSum(num / 10) ;
+}
+ 
+int main()
+{
+    int num = 2545;
+    printf("Sum: %d", getSum(num));
+    return 0;
+}
