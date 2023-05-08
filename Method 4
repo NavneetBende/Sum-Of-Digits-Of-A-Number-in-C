@@ -1,0 +1,30 @@
+// Time Complexity : O(N)
+// Space Complexity : O(1)
+#include<stdio.h>
+#include<string.h>
+
+int getSum(char str[], int len)
+{
+    int sum = 0;
+ 
+    // Traverse through the whole string(char array)
+    for (int i = 0; i < len; i++) 
+    {
+        // Ascii value pf numbers start from 48
+        // subtracting 48 will give us value in int
+        sum = sum + str[i] - 48;
+    }
+    return sum;
+}
+ 
+int main()
+{
+    char num[] = "987654321";
+    int len = strlen(num);
+    
+    // can also use below
+    // int len = sizeof(num)/sizeof(num[0]);
+    
+    printf("Sum: %d", getSum(num, len));
+    return 0;
+}
